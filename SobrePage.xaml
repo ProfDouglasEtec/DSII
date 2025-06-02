@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.SobrePage"
+             BackgroundColor="FloralWhite">
+
+    <VerticalStackLayout Padding="30" Spacing="20">
+        <Label Text="Desenvolvedor"
+               FontSize="24"
+               FontAttributes="Bold"
+               TextColor="Green"
+               HorizontalOptions="Center" />
+
+        <Label Text="Douglas de Lima"
+               FontSize="18"
+               TextColor="Green"
+               HorizontalOptions="Center" />
+
+        <Label Text="Técnico em Desenvolvimento de Sistemas"
+               FontSize="16"
+               TextColor="Green"
+               HorizontalOptions="Center" />
+
+        <Label Text="ETEC - Centro Paulo Souza"
+               FontSize="16"
+               TextColor="DarkGreen"
+               HorizontalOptions="Center" />
+        <Label Text="2025"
+               FontSize="16"
+               TextColor="DarkGreen"
+               HorizontalOptions="Center" />
+        <Button Text="Voltar"
+                BackgroundColor="DarkGreen"
+                TextColor="white"
+                Clicked="OnVoltarClicked"
+                HorizontalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>

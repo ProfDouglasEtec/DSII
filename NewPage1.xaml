@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+    <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.NewPage1"
+             BackgroundColor="White">
+
+        <ScrollView>
+            <VerticalStackLayout Padding="20" Spacing="20">
+
+                <Label Text="Reserva"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="DarkGreen"/>
+
+                <!-- Labels que recebem os dados -->
+                <Label x:Name="adultosLabel" FontSize="18" TextColor="DarkGreen"/>
+                <Label x:Name="criancasLabel" FontSize="18" TextColor="DarkGreen"/>
+                <Label x:Name="suiteSelecionadaLabel" FontSize="18" TextColor="DarkGreen"/>
+                <Label x:Name="checkinLabel" FontSize="18" TextColor="DarkGreen"/>
+                <Label x:Name="checkoutLabel" FontSize="18" TextColor="DarkGreen"/>
+
+                <!-- Mensagem de sucesso -->
+                <Label x:Name="reservaStatusLabel"
+                   FontSize="20"
+                   TextColor="Green"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   IsVisible="False" />
+
+                <!-- Botão para voltar -->
+                <Button Text="Voltar ao Início"
+                    BackgroundColor="DarkGreen"
+                    TextColor="White"
+                    Clicked="OnVoltarInicioClicked"/>
+            </VerticalStackLayout>
+        </ScrollView>
+    </ContentPage>

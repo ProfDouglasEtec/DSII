@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.MainPage"
+             BackgroundColor="white">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20">
+
+            <!-- Logo e título do hotel -->
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Image Source="logohotel.png" WidthRequest="40" HeightRequest="40" />
+                <Label Text="Hotels Green"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       TextColor="DarkGreen"
+                       VerticalOptions="Center" />
+            </HorizontalStackLayout>
+
+            <!-- Título principal -->
+            <Label Text="Diária"
+                   FontSize="26"
+                   FontAttributes="Bold"
+                   TextColor="DarkGreen"
+                   HorizontalOptions="Center" />
+
+            <!-- Moldura 1: Adultos, Crianças, Suíte -->
+            <Frame BackgroundColor="white" CornerRadius="10" Padding="15" HasShadow="True">
+                <VerticalStackLayout Spacing="15">
+
+                    <!-- Adultos -->
+                    <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                        <Label Text="Adultos" TextColor="Green" FontSize="16" VerticalOptions="Center"/>
+                        <Button Text="-" BackgroundColor="Green" TextColor="White" Clicked="OnRemoverAdulto" />
+                        <Entry x:Name="adultosEntry"
+                               Text="0"
+                               WidthRequest="60"
+                               Keyboard="Numeric"
+                               TextColor="DarkGreen"
+                               BackgroundColor="LightGray"
+                               VerticalOptions="Center" />
+                        <Button Text="+" BackgroundColor="DarkGreen" TextColor="White" Clicked="OnAdicionarAdulto" />
+                    </HorizontalStackLayout>
+
+                    <!-- Crianças -->
+                    <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                        <Label Text="Crianças" TextColor="Green" FontSize="16" VerticalOptions="Center"/>
+                        <Button Text="-" BackgroundColor="Green" TextColor="White" Clicked="OnRemoverCrianca" />
+                        <Entry x:Name="criancasEntry"
+                               Text="0"
+                               WidthRequest="60"
+                               Keyboard="Numeric"
+                               TextColor="DarkGreen"
+                               BackgroundColor="LightGray"
+                               VerticalOptions="Center" />
+                        <Button Text="+" BackgroundColor="DarkGreen" TextColor="White" Clicked="OnAdicionarCrianca" />
+                    </HorizontalStackLayout>
+
+                    <!-- Suíte como Picker -->
+                    <Label Text="Escolha a suíte:"
+                           TextColor="DarkGreen"
+                           FontSize="16"
+                           Margin="0,10,0,0" />
+                    <Picker x:Name="suitePicker"
+                            Title="Selecione uma suíte"
+                            SelectedIndexChanged="OnSuiteSelecionada">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Comum 1</x:String>
+                                <x:String>Comum 2</x:String>
+                                <x:String>Comum 3</x:String>
+                                <x:String>Comum 4</x:String>
+                                <x:String>Comum 5</x:String>
+                                <x:String>Master 1</x:String>
+                                <x:String>Master 2</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+
+                    <Label x:Name="suiteSelecionadaLabel"
+                           Text="Nenhuma suíte selecionada"
+                           TextColor="DarkGreen"
+                           HorizontalOptions="Center"
+                           FontAttributes="Italic" />
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Moldura 2: Período com DatePicker apenas -->
+            <Frame BackgroundColor="white" CornerRadius="10" Padding="15" HasShadow="True">
+                <VerticalStackLayout Spacing="10">
+
+                    <Label Text="Estadia" TextColor="DarkGreen" FontSize="16"/>
+
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="Check-in:" TextColor="DarkGreen" WidthRequest="80"/>
+                        <DatePicker x:Name="checkinDatePicker" />
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="Check-out:" TextColor="DarkGreen" WidthRequest="80"/>
+                        <DatePicker x:Name="checkoutDatePicker" />
+                    </HorizontalStackLayout>
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Botões finais -->
+            <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
+                <Button Text="Sobre"
+                        BackgroundColor="LightGray"
+                        TextColor="DarkGreen"
+                        Clicked="OnSobreClicked" />
+
+                <Button Text="Avançar"
+                        BackgroundColor="DarkGreen"
+                        TextColor="LightGray"
+                        Clicked="OnAvancarClicked"/>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
